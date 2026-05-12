@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
 
-# Pull the Docker image from Docker Hub
-echo
+# Pull the latest image from Docker Hub
+docker pull harishudayakumar/simple-python-flask-app:latest
 
-# Run the Docker image as a container
-echo
+# Run the container
+docker run -d \
+  --name flask-app \
+  -p 5000:5000 \
+  harishudayakumar/simple-python-flask-app:latest
